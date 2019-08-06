@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo da Velha</title>
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+    <h1 class='texto'>Jogo da Velha</h1>
+    <div class="container">
+        <div id="mostrador">
+            <p class="texto">
+                <b>Vez do Jogador: </b>
+            </p>
+            <img src="">
+        </div>
+        <div class="tabuleiro">
+            <div class="espaco" id="a1" jogada=""></div>
+            <div class="espaco" id="a2" jogada=""></div>
+            <div class="espaco" id="a3" jogada=""></div>
+
+            <div class="espaco" id="b1" jogada=""></div>
+            <div class="espaco" id="b2" jogada=""></div>
+            <div class="espaco" id="b3" jogada=""></div>
+
+            <div class="espaco" id="c1" jogada=""></div>
+            <div class="espaco" id="c2" jogada=""></div>
+            <div class="espaco" id="c3" jogada=""></div>
+        </div>
+        <div class="divbutton">
+            <button type="reset" class="btn btn-dark" onclick="resetar()">Resetar Jogo</button>
+        </div>
+    </div>
+</section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="./game.js"></script>
+    
+    <!-- Reset Button Javascript-->
+    <script>
+        function resetar() {
+            var espacos = document.getElementsByClassName('espaco');
+            for (let i = 0; i < espacos.length; i++) {
+                document.getElementsByClassName('espaco')[i].innerHTML = '';
+                document.getElementsByClassName('espaco')[i].setAttribute('jogada', '');
+                var player = document.querySelectorAll('div#mostrador img')[0];
+                player.setAttribute('src', './img/x.png');
+                playtime = player1;
+                gameover = false;
+            }
+        }
+    </script>
+</body>
+</html>
